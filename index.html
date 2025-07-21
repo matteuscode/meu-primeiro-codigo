@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeria de Fotos</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <main>
+
+
+
+    <section>
+      <div class="top-bar">
+
+        <div class="logo-top-bar">
+          <a href="/index.html"><img src="/pictures/freepik-logo-png-transparent.png" alt="logo"></a>
+        </div>
+
+        <div class="barraDeBusca">
+          <input type="text" id="barraDeBusca" placeholder="Buscar...">
+        </div>
+
+      </div>
+    </section>
+
+    <section class="bloco-carro box-shadow">
+      <div class="info-carro">
+        <a href="C200.html">
+          <h1>Mercedes C200 2024</h1>
+          <p>A Mercedes-Benz C200 2024 combina elegância e tecnologia com seu design sofisticado e interior refinado,
+            repleto de materiais premium e acabamento de alta qualidade. Equipado com um motor turbo de 2.0 litros e
+            tração traseira ou integral, oferece desempenho suave e eficiente, ideal para o uso diário ou viagens.
+            Seus sistemas de assistência ao condutor e conectividade avançada garantem conforto, segurança e uma
+            experiência de condução moderna e conectada.</p>
+      </div>
+      <div class="imagem-carro">
+        <img src="/pictures/mercedesc200.png" alt="Mercedes C200"></a>
+      </div>
+    </section>
+    <hr>
+    <section class="bloco-carro box-shadow">
+      <div class="info-carro">
+        <h1>Ferrari Puro Sangue</h1>
+        <p>A Ferrari Purosangue é o primeiro SUV da história da marca italiana, combinando luxo,
+          desempenho e exclusividade em um único modelo. Equipado com um motor V12 de 725 cavalos,
+          entrega aceleração brutal e dirigibilidade refinada, sem perder o DNA esportivo da Ferrari.
+          Seu design imponente une elegância e agressividade, com espaço interno surpreendente para
+          um carro da marca. É uma revolução que mantém o sangue puro da Ferrari pulsando forte.</p>
+      </div>
+      <div class="imagem-carro">
+        <img src="/pictures/ferrari-purosangue-2024-nero-opaco2.png" alt="Mercedes C200">
+      </div>
+    </section>
+    <hr>
+    <section class="bloco-carro box-shadow">
+      <div class="info-carro">
+        <h1>Tesla Model S</h1>
+        <p>O Tesla Model S é um sedã elétrico de alto desempenho que redefine o conceito de luxo e tecnologia
+          automotiva.
+          Com aceleração impressionante de 0 a 100 km/h em menos de 3 segundos e autonomia que ultrapassa os 600 km,
+          ele combina potência e eficiência como poucos. Seu interior minimalista é dominado por uma enorme tela central
+          e
+          recursos de direção semi-autônoma, oferecendo uma experiência futurista ao volante.</p>
+      </div>
+      <div class="imagem-carro">
+        <img src="/pictures/TeslaModelS2.png" alt="Tesla Model S">
+      </div>
+    </section>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const input = document.getElementById('barraDeBusca');
+        const blocos = document.querySelectorAll('.bloco-carro, hr');
+
+        input.addEventListener('input', () => {
+          const valor = input.value.toLowerCase();
+
+          blocos.forEach(bloco => {
+            const titulo = bloco.querySelector('h1, h2')?.textContent.toLowerCase() || '';
+            const descricao = bloco.querySelector('p')?.textContent.toLowerCase() || '';
+
+            const corresponde = titulo.includes(valor) || descricao.includes(valor);
+            bloco.style.display = corresponde ? 'flex' : 'none';
+          });
+        });
+      });
+    </script>
+
+  </main>
+
+  <div class="footer">© 2025 MatteusCode - Todos os direitos reservados.</div>
+
+</body>
+
+</html>

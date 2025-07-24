@@ -1,13 +1,10 @@
-html,
-body {
-  height: 100%;
+* {
   margin: 0;
   padding: 0;
+
 }
 
 body {
-  margin: 0;
-  padding: 0;
   background: rgb(229, 229, 229);
   display: flex;
   flex-direction: column;
@@ -18,68 +15,28 @@ main {
 }
 
 hr {
-  text-align: center;
+  margin: 0 auto;
   max-width: 900px;
 }
 
-.aviso-container {
-  position: sticky;
-  top: 0;
-  height: 28px;
-  background-color: rgb(255, 0, 0);
-  color: white;
-  font-family: monospace;
-  font-weight: 400;
-  font-size: 18px;
-  align-items: center;
-  overflow: hidden;
-  display: flex;
-
-}
-
-.aviso-texto {
-  position: absolute;
-  white-space: nowrap;
-  animation: rolar 200s linear infinite;
-}
-
-.aviso-texto span {
-  margin-right: 260px;
-  /* espaçamento entre as frases */
-}
-
-@keyframes rolar {
-  0% {
-    transform: translateX(0%);
-  }
-
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
 .top-bar {
-  display: flex;
-  align-items: center;
   justify-content: space-between;
-  /* espaça os itens (logo de um lado, busca do outro) */
-  height: 80px;
   background-color: #0f0f0f;
-  padding: 0 20px;
   border-bottom: 5px solid rgb(0, 88, 230);
+  display: flex;
+  position: relative;
 }
 
 .logo-top-bar img {
   height: 50px;
-}
-
-.logo-top-bar {
   position: absolute;
-  height: 50px;
+  left: 20px;
+  top: 15px
 }
 
 .barraDeBusca {
   margin: auto;
+  padding: 20px;
 }
 
 #barraDeBusca {
@@ -93,16 +50,9 @@ hr {
   font-size: 18px;
 }
 
-#sub-header a {
-  color: white;
-  text-decoration: none;
-}
-
 .bloco-carro {
   max-width: 980px;
-  /* largura máxima do bloco */
   margin: 20px auto;
-  /* centraliza horizontalmente */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -110,19 +60,12 @@ hr {
   text-align: justify;
   padding-left: 20px;
   border-radius: 20px;
+  box-shadow: hidden;
 }
 
-.centralizar-texto {
-  max-width: 980px;
-  /* largura máxima do bloco */
-  margin: 0px auto;
-  /* centraliza horizontalmente */
-  border-radius: 20px;
-  padding: 20px;
-}
-
-.info-carro {
-  flex: 1;
+.info-carro h1 {
+  padding-bottom: 15px;
+  margin-top: 0px;
 }
 
 .bloco-carro:hover {
@@ -141,10 +84,9 @@ hr {
 
 h1 {
   font-family: "Open Sans", sans-serif;
-  margin-top: 0px;
 }
 
-p {
+.info-carro p {
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
 }
@@ -206,9 +148,17 @@ a {
   transform: scale(1.05);
 }
 
+.centralizar-texto {
+  max-width: 500px;
+  margin: auto;
+  padding: 20px 40px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-bottom: 50px;
+}
+
 .lightbox {
   display: none;
-  /* escondido por padrão */
   position: fixed;
   top: 0;
   left: 0;
@@ -239,8 +189,118 @@ a {
   background-color: #0f0f0f;
   font-size: 12px;
   color: rgb(255, 255, 255);
-  padding: 50px 0 10px 0;
   text-align: center;
+  padding: 50px 0 10px;
   font-family: monospace;
-  margin-top: 50px;
+}
+
+.h1-c200-smartphone {
+    margin-top: 50px;
+    text-align: center;
+  }
+
+@media screen and (max-width: 600px) {
+
+  .bloco-carro {
+    max-width: 380px;
+    margin-top: 20px;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    padding-left: 0;
+    border-radius: 20px;
+    transition: none;
+    gap: 0;
+  }
+
+  .info-carro h1 {
+    padding-bottom: 15px;
+    margin-top: 0px;
+  }
+
+  hr {
+    max-width: 380px;
+  }
+
+  .imagem-carro img {
+    width: 380px;
+    border-radius: 8px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .box-shadow:hover {
+    box-shadow: none;
+  }
+
+  .barraDeBusca {
+    margin: auto;
+    padding: 20px;
+  }
+
+  #barraDeBusca {
+    padding: 10px;
+    width: 15em;
+    font-size: 16px;
+  }
+
+  .logo-top-bar img {
+    height: 50px;
+    position: static;
+    margin-left: 15px;
+    margin-top: 13px;
+  }
+
+  .galeria-fotos {
+    max-width: 380px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .galeria-fotos img {
+    width: 380px;
+    margin: 5px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: none;
+    transition: none;
+  }
+
+  .galeria-fotos img:hover {
+    transform: none;
+  }
+
+  .h1-c200-smartphone {
+    margin-top: 15px;
+  }
+
+}
+
+@media screen and (max-width: 390px) {
+
+  #barraDeBusca {
+    width: 13em;
+  }
+
+  .bloco-carro {
+    max-width: 360px;
+    margin-top: 20px;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    padding-left: 0;
+    border-radius: 20px;
+    transition: none;
+    gap: 0;
+  }
+
 }
